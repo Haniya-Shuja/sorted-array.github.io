@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form onsubmit="array" (); return false">
+        <div class="arraySort">
+            <div class="heading">
+                <h1>Sorting Array</h1 <h1>Ascending Order & Descending Order</h1>
+            </div>
+
+            <div class="originalArray"></div>
+            <div class="ascendingArray"></div>
+            <div class="descendingArray"></div>
+
+            <div class="footer">
+
+            </div>
+    </form>
+
+    <script>
+        let originalArray1 = document.querySelector(".originalArray");
+        let ascendingArray1 = document.querySelector(".ascendingArray");
+        let descendingArray1 = document.querySelector(".descendingArray");
+
+        let originalArray = [2, 3, 4, 2, 4, 2, 4, 5, 46, 4, 23, 4, 6, 46, 64, 56, 46]
+        let ascendingArray = [2, 2, 2, 3, 4, 4, 4, 4, 5, 6, 23, 46, 46, 46, 56, 64]
+        let descendingArray = [64, 56, 46, 46, 46, 23, 6, 5, 4, 4, 4, 4, 3, 2, 2, 2]
+        //   main loop
+        for (var i = 1; i < ascendingArray.length; i++) {
+            for (var j = 0; j < i; j++) {
+                if (ascendingArray[i] < ascendingArray[j]) {
+                    var x = ascendingArray[i];
+                    ascendingArray[i] = ascendingArray[j];
+                    ascendingArray[j] = x;
+                }
+            }
+        }
+
+        for (var i = 1; i < descendingArray.length; i++) {
+            for (var j = 0; j < i; j++) {
+                if (descendingArray[i] > descendingArray[j]) {
+                    var x = descendingArray[i];
+                    descendingArray[i] = descendingArray[j];
+                    descendingArray[j] = x;
+                }
+            }
+        }
+        originalArray1.innerHTML = `<p><span style="font-weight: 600;">Original Array:</span> ${originalArray}</p>`;
+        ascendingArray1.innerHTML = `<p><span style="font-weight: 600;">Ascending Array:</span> ${ascendingArray}</p>`;
+        descendingArray1.innerHTML = `<p><span style="font-weight: 600;">Descending Array:</span>${descendingArray}</p>`;
+    </script>
+
+</body>
+
+</html>
